@@ -1,0 +1,39 @@
+.link-menu{
+    color: black;
+}
+
+.navbar-brand{
+    font-family: 'Redressed', cursive;
+}
+
+.card{
+    width: 450px;
+    height: 520px;
+    margin: auto;
+}
+
+.post_{
+    width: 450px;
+    height: 450px;
+    margin: auto;
+}
+
+.register{
+    width: 45%;
+    height: 60%;
+    margin: auto;
+    padding: 10px 20px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    margin-top: 20px;
+}
+
+.message{
+    text-align: center;
+    color:green;
+}
+
+.logout{
+    margin-top: 60px;
+    text-align: center;
+}
