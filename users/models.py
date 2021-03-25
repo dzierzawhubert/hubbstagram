@@ -4,7 +4,8 @@ from django.db import models
 
 class UsersProfile(models.Model):
 
-    gender = [ ('M' , 'Male'), ('F' , 'Female') ]
+    gender = [ ('M' , 'Male'), ('F' , 'Female'), ('TM', 'Trans Male'), \
+        ('TF', 'Trans Female'), ('Q', 'Queer'), ('F', 'Genderfluid'), ('AT', 'Attack Helicopter'), ('D', 'Dog') ]
 
     name = models.CharField(max_length=50)
     sec_name = models.CharField(max_length=50)
