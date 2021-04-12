@@ -1,0 +1,71 @@
+.link-menu{
+    color: black;
+}
+
+.navbar-brand{
+    font-family: 'Redressed', cursive;
+}
+
+.card{
+    width: 450px;
+    height: 520px;
+    margin: auto;
+}
+
+.post_{
+    width: 600px;
+    height: 250px;
+    margin: auto;
+}
+
+.register{
+    width: 45%;
+    height: 60%;
+    margin: auto;
+    padding: 10px 20px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    margin-top: 20px;
+}
+
+.message{
+    text-align: center;
+    color:green;
+}
+
+.logout{
+    margin-top: 60px;
+    text-align: center;
+}
+
+.profile{
+    width: 45%;
+    height: 600px;
+    border: 1px solid black;
+    margin: auto;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+.profile_header{
+    background-color: #99d6ff;
+    height: 40px;
+    width:auto;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.rounded-circle{
+    margin-top: 20px;
+    margin-left: 30px;
+    width: 120px;
+    height: 120px;
+
+}
+
+.about_me{
+    margin-top: 30px;
+    margin-left: 70px;
+    float: left;
+}
+

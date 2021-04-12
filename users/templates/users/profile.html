@@ -1,0 +1,26 @@
+{% extends 'main_page/base.html' %}
+{% block content %}
+    <div class="post_ d-flex flex-column mt-4 mb-4 card">
+        <div class="profile_header">
+            <h2>{{user.username}}</h2>
+        </div>
+        <div style="float: left;">
+                <img class="rounded-circle account-img" src="{{ user.usersprofile.profile_pic.url }}">
+        </div>
+        <div class="about_me" style="float: left;">
+            <h5>Hi my name is {{user.usersprofile.name}} {{user.usersprofile.sec_name}}</h5>
+            <h5>I am {{user.usersprofile.age}} years old</h5>
+            <small>If you want to contact me : {{user.usersprofile.email}}</small>
+            <div class="form-group">
+                <button type="subbmit" class="btn btn-primary mb-3 mt-2"><a href=" {% url 'profile-update' %} " style="color: white">Update profile</a></button>
+                <button type="subbmit" class="btn btn-primary mb-3 mt-2"><a href="{% url 'create_post' %}" style="color: white">Add picture</a></button>
+            </div>
+        </div>
+        <div class="user_desctription">
+            {{ user.usersprofile.description }}
+        </div>
+
+    </div>
+
+
+{% endblock %}
