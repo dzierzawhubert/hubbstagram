@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import UsersProfile, UserRegisterForm, CreatePost
+from .forms import UsersProfile, UserRegisterForm, CreatePost, UserUpdate
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
@@ -20,15 +20,24 @@ def profile(request):
     return render(request, 'users/profile.html')
 
 def profile_update(request):
+
     if request.method == 'POST':
-        form = UsersProfile(request.POST)
-        if form.is_valid():
-            form.save()
+        form1 = UserUpdate(request.POST)
+        form2 = UsersProfile(request.POST)
+        if form1.is_valid() and form2.is_valid():
+            form1.save()
+            form2.save()
             return redirect('profile')
     else:
-        form = UsersProfile()
+        form1 = UserUpdate()
+        form2 = UsersProfile()
 
-    return render(request, 'users/profile_update.html', {'form' : form})
+    context = {
+        'form1' : form1,
+        'form2' : form2
+    }
+
+    return render(request, 'users/profile_update.html')
 
 def login(request):
     context = {

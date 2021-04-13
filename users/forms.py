@@ -4,12 +4,18 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from .models import CreatePost
 
+class UserUpdate(forms.ModelForm):
+
+    class Meta:
+        model = User
+        fields = ['username']
+
 class UsersProfile(forms.ModelForm):
     model = User
 
     class Meta:
         model = models.UsersProfile
-        fields = ['name', 'sec_name', 'email', 'phone_number', 'gender', 'age']
+        fields = ['sec_name', 'email', 'phone_number', 'gender', 'age']
 
 
 class UserRegisterForm(UserCreationForm):
