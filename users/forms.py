@@ -2,21 +2,17 @@ from django import forms
 from . import models
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import CreatePost
+from .models import CreatePost, UsersProfile
 
 class UserUpdate(forms.ModelForm):
-
     class Meta:
         model = User
         fields = ['username']
 
 class UsersProfile(forms.ModelForm):
-    model = User
-
     class Meta:
-        model = models.UsersProfile
+        model = UsersProfile
         fields = ['sec_name', 'email', 'phone_number', 'gender', 'age']
-
 
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()
@@ -27,5 +23,6 @@ class UserRegisterForm(UserCreationForm):
 
 class CreatePost(forms.ModelForm):
     class Meta:
-        model = models.CreatePost
+        # if this model = CreatePost not working try models.CreatePost
+        model = CreatePost
         fields = ['picture', 'title', 'description']

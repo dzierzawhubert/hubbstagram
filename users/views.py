@@ -16,28 +16,29 @@ def register(request):
 
     return render(request, 'users/register.html', {'form' : form})
 
+ @login_required
 def profile(request):
     return render(request, 'users/profile.html')
 
+@login_required
 def profile_update(request):
-
     if request.method == 'POST':
-        form1 = UserUpdate(request.POST)
-        form2 = UsersProfile(request.POST)
+        form1 = UserUpdate(request.POST,instance=request.user)
+        form2 = UsersProfile(request.POST, instance=request.user.usersprofile)
         if form1.is_valid() and form2.is_valid():
             form1.save()
             form2.save()
             return redirect('profile')
     else:
-        form1 = UserUpdate()
-        form2 = UsersProfile()
+        form1 = UserUpdate(instance=request.user)
+        form2 = UsersProfile(instance=request.user.usersprofile)
 
     context = {
         'form1' : form1,
         'form2' : form2
     }
 
-    return render(request, 'users/profile_update.html')
+    return render(request, 'users/profile_update.html', context)
 
 def login(request):
     context = {
