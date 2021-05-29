@@ -13,6 +13,7 @@
 }
 
 .post_{
+    display: flex;
     width: 600px;
     height: 250px;
     margin: auto;
@@ -47,12 +48,24 @@
     border-radius: 5px;
 }
 
+.profile_pic{
+    width: 30%;
+    height: 220px;
+}
+
 .profile_header{
     background-color: #99d6ff;
-    height: 40px;
-    width:auto;
     border-radius: 5px;
     text-align: center;
+}
+
+.post_rounded-circle{
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+
 }
 
 .rounded-circle{
@@ -64,6 +77,8 @@
 }
 
 .about_me{
+    width: 300px;
+    height: 150px;
     margin-top: 30px;
     margin-left: 70px;
     float: left;

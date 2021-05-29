@@ -12,7 +12,7 @@ class UserUpdate(forms.ModelForm):
 class UsersProfile(forms.ModelForm):
     class Meta:
         model = UsersProfile
-        fields = ['sec_name', 'email', 'phone_number', 'gender', 'age']
+        fields = ['sec_name', 'email', 'description', 'profile_pic', 'phone_number', 'gender', 'age']
 
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()

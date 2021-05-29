@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+from django.utils import timezone
 # Create your models here.
 
 class UsersProfile(models.Model):
@@ -19,14 +19,14 @@ class UsersProfile(models.Model):
     age = models.CharField(max_length=3)
 
     def __str__(self):
-        return f'users name:{self.name}, email:{self.email}, phone_number:{self.phone_number}, '
+        return f'{self.name},{self.email},{self.phone_number}'
 
 class CreatePost(models.Model):
     picture = models.ImageField(upload_to='users/images', default='default.jpg')
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     description = models.TextField()
-    date_posted = models.DateTimeField()
+    date_posted = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return f"Author:{author}, title:{title}, picture:{picture}, date posted:{date_posted}"
