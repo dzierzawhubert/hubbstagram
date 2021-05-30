@@ -84,3 +84,18 @@
     float: left;
 }
 
+
+/*new_profile*/
+
+.whole{
+    margin: auto;
+    width: 100%;
+    height: 150px;
+    display: flex;
+}
+
+.profile{
+    display: flex;
+/*    width: 50%;
+    height: 20%;*/
+}

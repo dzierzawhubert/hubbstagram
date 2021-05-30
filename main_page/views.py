@@ -9,3 +9,6 @@ def home(request):
     }
     return render(request, 'main_page/home.html', context)
 
+def new_profile(request):
+    return render(request, 'main_page/new_profile.html')
+
